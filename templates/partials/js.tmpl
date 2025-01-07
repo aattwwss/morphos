@@ -6,7 +6,7 @@
     });
   </script>
   <script>
-    // dark mode toggle buutton.
+    // dark mode toggle button.
     htmx.on('htmx:load', function(evt) { defaultMode(); });
     htmx.on('#darkModeSwitch', 'change', function(evt) { darkModeSwitch(); });
 
@@ -14,6 +14,7 @@
       const htmlElement = document.documentElement;
       const currentTheme = localStorage.getItem('bsTheme') || 'dark';
       htmlElement.setAttribute('data-bs-theme', currentTheme);
+      document.getElementById('darkModeSwitch').checked = currentTheme === 'dark';
     }
 
     function darkModeSwitch() {
